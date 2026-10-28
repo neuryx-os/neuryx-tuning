@@ -1,0 +1,9 @@
+# Resultados de benchmark locais
+bench/results/
+*.log
+
+# Editores
+*.swp
+*~
+.vscode/
+.idea/

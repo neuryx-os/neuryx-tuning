@@ -1,0 +1,9 @@
+# NÃO VALIDADO — valores dependem de research/topics/02-ganhos-reais-de-tuning.md. Não usar em produção.
+#
+# Candidato: ativar o persistence mode da GPU NVIDIA quando o dispositivo
+# aparecer, evitando a latência de reinicialização do driver entre execuções.
+# Só tem efeito se o driver tiver sido instalado por "neuryxctl gpu setup"
+# (ADR 0004). Alternativa a avaliar: o serviço nvidia-persistenced.
+
+# ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", RUN+="/usr/bin/nvidia-smi -pm 1"
+# ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", RUN+="/usr/bin/nvidia-smi -pm 1"
